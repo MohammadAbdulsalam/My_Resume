@@ -1,0 +1,320 @@
+:root {
+    --primary-color :#1e1e1e;
+    --secondary-color : #b27f00;
+    --main-duration: 0.7s;
+}
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(47, 47, 47);
+}
+
+/* Start Container */
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+@media (max-width:767px){
+    .container {
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+    }
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.spikes {
+    position: relative;
+}
+.spikes::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    z-index: 2;
+    background-image: linear-gradient(45deg, var(--secondary-color) 25%, transparent 25%), linear-gradient(135deg, var(--secondary-color) 25%, transparent 25%);
+    background-size: 40px 40px;
+}
+.spikes:hover::after{
+    content: "";
+    background-image: linear-gradient(45deg, var(--primary-color) 25%, transparent 25%), linear-gradient(135deg, var(--primary-color) 25%, transparent 25%);
+    transition: var(--main-duration);
+}
+@media (max-width:767px){
+    .spikes::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        z-index: 2;
+        background-image: linear-gradient(135deg, var(--secondary-color) 25%, transparent 25%), linear-gradient(225deg, var(--secondary-color) 25%, transparent 25%);
+        background-size: 30px 30px;
+    }
+    .spikes:hover:after {
+        content: "";
+        background-image: linear-gradient(135deg, var(--primary-color) 25%, transparent 25%), linear-gradient(225deg, var(--primary-color) 25%, transparent 25%);
+        transition: var(--main-duration);
+    }
+}
+/* End Container */
+
+/* Start Col-1 */
+.container .col1 {
+    width: 40%;
+    background-color: var(--primary-color);
+    background-image: url(../imgs/Background.png);
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+@media (max-width:767px){
+    .container .col1 {
+        width: 100%;
+    }
+}
+.container .col1::before {
+    content: "";
+    background-color: rgb( 0 0 0 / 70%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.col1 .mov {
+    max-width: 100%;
+    margin: 25px 10px;
+    box-shadow: 0px 0px 10px 0px var(--secondary-color);
+}
+
+@media (min-width:1420px) {
+    .col1 .mov {
+        width: 28%;
+        margin: 25px 15px;
+        box-shadow: 0px 0px 10px 0px var(--secondary-color);
+        position: fixed;
+    }
+}
+@media (max-width:767px){
+    .col1 .mov {
+        box-shadow: none;
+    }}
+.container .col1 img {
+    margin: 5.67em 0 0;
+    padding: 3px;
+    border: 2px solid var(--secondary-color);
+    max-width: 70%;
+    border-radius: 50%;
+}
+.container .col1 img:hover {
+    transform: scale(1.1);
+    transition: var(--main-duration);
+}
+.container .col1 h1 {
+    color: var(--secondary-color);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+/* End Col-1 */
+/* Start Col-2 */
+.container .col2 {
+    width: 60%;
+    background-color: #f5f5f5;
+    padding:0 30px;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:767px){
+    .container .col2 {
+        width: 100%;
+    }
+}
+.container .col2 h1 {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    border-bottom: 5px double var(--secondary-color);
+}
+.container .col2 h1:hover {
+    color: var(--primary-color);
+    border-bottom: 5px double var(--primary-color);
+    transition: var(--main-duration);
+}
+.container .col2 .personalinfo p:nth-child(even) {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.container .col2 .personalinfo p:nth-child(even):hover {
+    padding-left: 5px;
+    transition: var(--main-duration);
+}
+.container .col2 .personalinfo p:nth-child(odd) {
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+.container .col2 .personaledu p:nth-child(odd) {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.container .col2 .personaledu p:nth-child(odd):hover {
+    padding-left: 5px;
+    transition: var(--main-duration);
+}
+.container .col2 .personaledu p:nth-child(even) {
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.container .col2 .personaledu select {
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    border-color: var(--secondary-color);
+}
+.container .col2 .personaledu div {
+    padding-bottom: 15px;
+    border-bottom: 3px dashed var(--secondary-color);
+}
+.container .col2 .workingtogath p:nth-child(odd) {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.container .col2 .workingtogath p:nth-child(odd):hover {
+    padding-left: 5px;
+    transition: var(--main-duration);
+}
+.container .col2 .workingtogath p:nth-child(even) {
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.container .col2 .workingtogath select {
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    border-color: var(--secondary-color);
+}
+
+.container .col2 .workingtogath div {
+    padding-bottom: 15px;
+    border-bottom: 3px dashed var(--secondary-color);
+}
+
+.container .col2 .skills p:nth-child(odd) {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.container .col2 .skills p:nth-child(odd):hover {
+    padding-left: 5px;
+    transition: var(--main-duration);
+}
+.container .col2 .skills p:nth-child(even) {
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.container .col2 .skills select {
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    border-color: var(--secondary-color);
+}
+.container .col2 .skills div {
+    padding-bottom: 15px;
+    border-bottom: 3px dashed var(--secondary-color);
+}
+.container .col2 .langskills p:nth-child(odd) {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.container .col2 .langskills p:nth-child(odd):hover {
+    padding-left: 5px;
+    transition: var(--main-duration);
+}
+.container .col2 .langskills p:nth-child(even) {
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+}
+.container .col2 .langskills select {
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    border-color: var(--secondary-color);
+}
+.container .col2 .langskills .reading {
+    margin-left: 55px;
+}
+.container .col2 .langskills .writing {
+    margin-left: 62px;
+
+}
+.container .col2 .langskills .conversation {
+    margin-left: 26px;
+
+}
+.container .col2 .langskills div {
+    margin-bottom: 15px;
+    border-bottom: 3px dashed var(--secondary-color);
+
+}
+.container .col2 .langskills .secondlang ol li {
+    padding-bottom: 10px;
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: 300;
+}
+.container .col2 .langskills .secondlang ol {
+    margin-bottom: 5px;
+}
+/* End Col-2 */
